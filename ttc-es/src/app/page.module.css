@@ -1,0 +1,46 @@
+.page {
+  background-image: url("/home_page_bg_cuted.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 906px;
+  background: rgba(2, 33, 74, 0.6);
+  backdrop-filter: blur(15.8px);
+  font-family: var(--font-roboto);
+  color: white;
+  padding-left: 53px;
+  padding-top: 63px;
+  padding-bottom: 79px;
+  gap: 29px;
+  margin-top: 15vh;
+  margin-left: 15vw;
+}
+
+.article h2 {
+  font-weight: 400;
+  font-family: var(--font-prosto-one);
+  font-size: 55px;
+}
+
+.article h3 {
+  font-size: 40px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.article ul {
+  font-weight: 200;
+  font-size: 30px;
+  margin-left: 40px;
+}

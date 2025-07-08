@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(13, 53, 105, 0.5);
+  backdrop-filter: blur(33px);
+  color: white;
+  height: 129;
+}
+
+.logo {
+  margin-top: 27px;
+}
+
+.navigation {
+  display: flex;
+  margin-top: 57.1px;
+  gap: 40px;
+}
+
+.link {
+  height: fit-content;
+  font-family: var(--font-roboto);
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  padding: 0px 24px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 50px;
+}
+
+.link:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.active {
+  border: 2px solid white;
+}
