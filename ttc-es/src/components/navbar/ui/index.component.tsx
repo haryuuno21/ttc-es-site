@@ -28,8 +28,8 @@ export const Navbar = () => {
           Главная
         </Link>
         <Link 
-          className={`${styles.link} ${isActive("/about") ? styles.active : ""}`} 
-          href="/about"
+          className={`${styles.link} ${isActive("/compinf") ? styles.active : ""}`} 
+          href="/compinf"
         >
           О компании
         </Link>

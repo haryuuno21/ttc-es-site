@@ -1,1 +1,1 @@
-export {test} from './index.component'
+
