@@ -5,20 +5,20 @@
   background: #436A9D;
 }
 .page h1 {
-  font-size: 3.75rem;
+  font-size: 3.75em;
   font-family: var(--font-prosto-one);
 }
 .contacts h1 {
-  font-size: 3.75rem;
+  font-size: 3.75em;
   font-weight: 300;
   font-family: var(--font-roboto);
 }
 
 .contacts {
-  margin-top: 50px;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5em;
 }
 
 .main {
@@ -28,18 +28,21 @@
 
 .article {
     font-family: var(--font-roboto);
+    display: flex;
+    flex-direction: column;
+    gap:10px;
 }
 
 .article h2 {
     font-weight: 500;
-    font-size: 1.875rem;
+    font-size: 1.875em;
 }
 
 .article p {
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .feedbackBlock {
-    margin-top:50px;
+    margin-top:5vh;
 }

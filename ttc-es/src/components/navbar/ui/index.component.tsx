@@ -3,12 +3,17 @@ import Image from "next/image";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // Проверяем, активна ли ссылка
   const isActive = (href: string) => pathname === href;
+  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className={styles.header}>
@@ -20,28 +25,37 @@ export const Navbar = () => {
         height={81.72}
         priority
       />
-      <nav className={styles.navigation}>
+      
+      <button className={styles.menuButton} onClick={toggleMenu}>
+        {isMenuOpen ? "✕" : "☰"}
+      </button>
+      
+      <nav className={`${styles.navigation} ${isMenuOpen ? styles.active : ""}`}>
         <Link 
           className={`${styles.link} ${isActive("/") ? styles.active : ""}`} 
           href="/"
+          onClick={() => setIsMenuOpen(false)}
         >
           Главная
         </Link>
         <Link 
           className={`${styles.link} ${isActive("/about") ? styles.active : ""}`} 
           href="/about"
+          onClick={() => setIsMenuOpen(false)}
         >
           О компании
         </Link>
         <Link 
           className={`${styles.link} ${isActive("/catalog") ? styles.active : ""}`} 
           href="/catalog"
+          onClick={() => setIsMenuOpen(false)}
         >
           Каталог
         </Link>
         <Link 
           className={`${styles.link} ${isActive("/contact") ? styles.active : ""}`} 
           href="/contact"
+          onClick={() => setIsMenuOpen(false)}
         >
           Обратная связь
         </Link>
