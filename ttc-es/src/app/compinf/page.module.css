@@ -1,14 +1,8 @@
 .page {
-  background-color: #D9D9DB;
+  background-color: #efefef;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Изменил на 100vh вместо 90vh */
 }
-
-.main {
-  position: relative;
-  width: 100%;
-}
-
 .page h1 {
   font-weight: 400;
   font-family: var(--font-prosto-one);
@@ -27,32 +21,186 @@
   margin-top: 4vh;
 }
 
-.article {
+.article, .article2 {
   display: flex;
   flex-direction: column;
   width: 601px;
   background: white;
+  border-radius: 2%;
   font-family: var(--font-roboto);
   color: #0D3569;
   padding-left: 35px;
   padding-top: 63px;
   padding-bottom: 79px;
   gap: 10px;
+  font-size: 25px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+  transition: box-shadow 0.3s ease; /* Плавное изменение тени при наведении */
+}
+
+.article:hover, .article2:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Усиливаем тень при наведении */
+}
+
+/* Убираем дублирующие margin у article и article2, 
+   так как они теперь заданы у contentWrapper */
+.main {
+  position: relative;
+  width: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 40px;
   margin-top: 4vh;
   margin-left: 15vw;
-  font-size: 25px;
+  align-items: flex-start; /* Выравнивание по верху */
 }
 
-
-
-.article h3 {
-  font-size: 40px;
-  font-weight: 300;
-  margin-left: 10px;
+.rightText {
+  font-family: var(--font-roboto);
+  color: #0D3569;
+  font-size: 23px;
+  font-style: light;
+  max-width: 601px; /* Такая же ширина как у article */
 }
 
-.article ul {
-  font-weight: 200;
+.rightText h3 {
+  font-weight: 400;
   font-size: 30px;
-  margin-left: 40px;
+  font-style: normal;
+  color: #0D3569;
+  padding-bottom: 20px;
+}
+
+/* Новые стили для цветного фона и блоков */
+/* Убираем продление фона, так как секция теперь в конце */
+.extendedSection {
+  background-color: #436A9D;
+  width: 100%;
+  padding-bottom: 80px;
+  margin-top: 80px;
+}
+
+.extendedContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.serviceBlock {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  font-family: var(--font-roboto);
+  color: #0D3569;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.serviceBlock h3 {
+  color: #436A9D;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Стили для плиточной сетки */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 60px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.tileContainer {
+  position: relative;
+}
+
+.tile {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+.tile h3 {
+  color: #436A9D;
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.tile p {
+  color: #0D3569;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.serviceHeader {
+  color: white;
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: var(--font-prosto-one);
+  padding-top: 40px;
+}
+
+/* Добавляем стили для секции достижений в конце */
+.achievementsSection {
+  background-color: #efefef;
+  padding: 80px 0 120px;
+  position: relative;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.achievementCard {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.achievementCard:hover {
+  transform: translateY(-10px);
+}
+
+.achievementNumber {
+  font-family: var(--font-prosto-one);
+  font-size: 42px;
+  color: #0D3569;
+  margin-bottom: 10px;
+}
+
+.achievementLabel {
+  font-family: var(--font-roboto);
+  font-size: 18px;
+  color: #436A9D;
 }
