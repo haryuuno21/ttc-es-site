@@ -2,12 +2,15 @@
   width: 100%;
   min-height: 100vh;
   color: #ffffff;
-  background: #436A9D;
+  background: #436a9d;
+  box-sizing: border-box;
 }
+
 .page h1 {
   font-size: 3.75em;
   font-family: var(--font-prosto-one);
 }
+
 .contacts h1 {
   font-size: 3.75em;
   font-weight: 300;
@@ -24,25 +27,135 @@
 .main {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 40px;
 }
 
 .article {
-    font-family: var(--font-roboto);
-    display: flex;
-    flex-direction: column;
-    gap:10px;
+  font-family: var(--font-roboto);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
 }
 
 .article h2 {
-    font-weight: 500;
-    font-size: 1.875em;
+  font-weight: 500;
+  font-size: 1.875em;
 }
 
 .article p {
-    font-weight: 300;
-    font-size: 1.5em;
+  font-weight: 300;
+  font-size: 1.5em;
 }
 
 .feedbackBlock {
-    margin-top:5vh;
+  margin-top: 5vh;
+  max-width: 600px;
+}
+
+/* Адаптивные стили для планшетов */
+@media (max-width: 1200px) {
+  .page h1, .contacts h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+  
+  .article h2 {
+    font-size: 1.5em;
+  }
+  
+  .article p {
+    font-size: 1.2em;
+  }
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .page h1, .contacts h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+  
+  .article h2 {
+    font-size: 1.3em;
+  }
+  
+  .article p {
+    font-size: 1em;
+  }
+  
+  .feedbackBlock, .contacts {
+    margin-top: 3vh;
+  }
+  
+  .article {
+    width: 100%;
+  }
+}
+
+/* Мелкие мобильные устройства */
+@media (max-width: 550px) {
+  .page h1, .contacts h1 {
+    font-size: 2em;
+  }
+  
+  .article h2 {
+    font-size: 1.1em;
+  }
+  
+  .article p {
+    font-size: 0.9em;
+  }
+}
+
+/* Добавьте это в ваш CSS файл */
+@media (max-width: 550px) {
+  .page h1, .contacts h1 {
+    font-size: 2em;
+  }
+  
+  .article h2 {
+    font-size: 1.1em;
+  }
+  
+  .article p {
+    font-size: 0.9em;
+  }
+
+  /* Новые стили для предотвращения выхода текста за границы */
+  .article {
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .article div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .feedbackBlock {
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+/* Для очень маленьких экранов (например, iPhone 5/SE) */
+@media (max-width: 320px) {
+  .article p {
+    font-size: 0.8em;
+  }
+  
+  .article {
+    padding: 0 10px;
+  }
 }
