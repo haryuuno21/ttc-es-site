@@ -114,3 +114,13 @@
 .submitButton:hover {
   background-color: #0052a3;
 }
+
+@media (max-width: 550px) {
+  .container {
+    padding: 1.5em;
+    margin: 1em;
+  }
+  .submitButton {
+    width: 150px;
+  }
+}
