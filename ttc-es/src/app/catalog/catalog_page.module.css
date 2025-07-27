@@ -9,153 +9,65 @@
 .page h1 {
   font-size: 3.75em;
   font-family: var(--font-prosto-one);
-}
-
-.contacts h1 {
-  font-size: 3.75em;
-  font-weight: 300;
-  font-family: var(--font-roboto);
-}
-
-.contacts {
-  margin-top: 5vh;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
+  color: #0D3569; /* Добавил цвет, так как фон белый */
 }
 
 .main {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding-bottom: 40px;
-}
-
-.article {
-  font-family: var(--font-roboto);
-  display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 600px;
-}
-
-.article h2 {
-  font-weight: 500;
-  font-size: 1.875em;
-}
-
-.article p {
-  font-weight: 300;
-  font-size: 1.5em;
+  align-items: center;
+  padding: 40px 0;
 }
 
 .feedbackBlock {
+  width: 100%;
+  max-width: 1200px;
   margin-top: 5vh;
-  max-width: 600px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Адаптивные стили для планшетов */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* Адаптивные стили */
 @media (max-width: 1200px) {
-  .page h1, .contacts h1 {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+  
+  .page h1 {
     font-size: 3em;
     text-align: center;
   }
-  
-  .article h2 {
-    font-size: 1.5em;
-  }
-  
-  .article p {
-    font-size: 1.2em;
-  }
 }
 
-/* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
-  .main {
-    flex-direction: column;
-    align-items: center;
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
     gap: 20px;
   }
   
-  .page h1, .contacts h1 {
+  .page h1 {
     font-size: 2.5em;
-    text-align: center;
-  }
-  
-  .article h2 {
-    font-size: 1.3em;
-  }
-  
-  .article p {
-    font-size: 1em;
-  }
-  
-  .feedbackBlock, .contacts {
-    margin-top: 3vh;
-  }
-  
-  .article {
-    width: 100%;
   }
 }
 
-/* Мелкие мобильные устройства */
 @media (max-width: 550px) {
-  .page h1, .contacts h1 {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    max-width: 270px;
+  }
+  
+  .page h1 {
     font-size: 2em;
-  }
-  
-  .article h2 {
-    font-size: 1.1em;
-  }
-  
-  .article p {
-    font-size: 0.9em;
-  }
-}
-
-/* Добавьте это в ваш CSS файл */
-@media (max-width: 550px) {
-  .page h1, .contacts h1 {
-    font-size: 2em;
-  }
-  
-  .article h2 {
-    font-size: 1.1em;
-  }
-  
-  .article p {
-    font-size: 0.9em;
-  }
-
-  /* Новые стили для предотвращения выхода текста за границы */
-  .article {
-    padding: 0 15px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  .article div {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .feedbackBlock {
-    padding: 0 15px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-}
-
-/* Для очень маленьких экранов (например, iPhone 5/SE) */
-@media (max-width: 320px) {
-  .article p {
-    font-size: 0.8em;
-  }
-  
-  .article {
-    padding: 0 10px;
   }
 }
