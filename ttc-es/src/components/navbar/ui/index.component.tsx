@@ -3,9 +3,10 @@ import Image from "next/image";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, FC } from "react";
+import { Props } from "./index.types";
 
-export const Navbar = () => {
+export const Navbar :FC<Props> = ({staticColor}) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -16,7 +17,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${staticColor ? styles.staticColor : ""}`}>
       <Image
         className={styles.logo}
         src="/logo.svg"
