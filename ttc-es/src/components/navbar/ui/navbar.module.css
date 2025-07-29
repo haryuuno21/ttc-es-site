@@ -12,6 +12,11 @@
   z-index: 10;
 }
 
+.header.staticColor {
+  background: rgba(13, 53, 105, 1);
+  backdrop-filter: none;
+}
+
 .logo {
   width: 391px;
 }
